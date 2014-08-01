@@ -1,6 +1,7 @@
 ﻿using Meebey.SmartIrc4net;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -48,7 +49,13 @@ namespace TriumIrcBot
 
             new Thread(Listen).Start();
 
-            PluginManager.LoadPluginFiles(new List<string>());
+            string _PluginDirectory = ConfigurationManager.GetValue("PluginDirectory");
+
+            if (!string.IsNullOrWhiteSpace(_PluginDirectory))
+            {
+                PluginManager.LoadPluginFiles(Directory.EnumerateFiles(_PluginDirectory, "*.dll"));
+            }
+            //Maybe move into the if above?
             PluginManager.RegisterIrcClient(fIrcClient);
         }
 

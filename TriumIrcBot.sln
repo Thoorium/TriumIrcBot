@@ -10,6 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriumIrcBotConsole", "Trium
 		{3EDBA658-AC69-4EFC-AD5F-1BA41C216F89} = {3EDBA658-AC69-4EFC-AD5F-1BA41C216F89}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriumIrcBotPluginSamples", "PluginSamples\TriumIrcBotPluginSamples.csproj", "{63CC15C9-EE2E-4BD6-AF7D-71D3D2BC0F6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriumIrcBot.Plugin", "TriumIrcBot.Plugin\TriumIrcBot.Plugin.csproj", "{3C1D262B-E12F-4FE0-9922-2614379F2BEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +28,14 @@ Global
 		{EC80312C-6047-4AEA-84F7-4CBC91909947}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC80312C-6047-4AEA-84F7-4CBC91909947}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC80312C-6047-4AEA-84F7-4CBC91909947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63CC15C9-EE2E-4BD6-AF7D-71D3D2BC0F6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63CC15C9-EE2E-4BD6-AF7D-71D3D2BC0F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63CC15C9-EE2E-4BD6-AF7D-71D3D2BC0F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63CC15C9-EE2E-4BD6-AF7D-71D3D2BC0F6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C1D262B-E12F-4FE0-9922-2614379F2BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C1D262B-E12F-4FE0-9922-2614379F2BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C1D262B-E12F-4FE0-9922-2614379F2BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C1D262B-E12F-4FE0-9922-2614379F2BEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3EDBA658-AC69-4EFC-AD5F-1BA41C216F89}</ProjectGuid>
+    <ProjectGuid>{63CC15C9-EE2E-4BD6-AF7D-71D3D2BC0F6F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TriumIrcBot</RootNamespace>
-    <AssemblyName>TriumIrcBot</AssemblyName>
+    <RootNamespace>PluginSamples</RootNamespace>
+    <AssemblyName>PluginSamples</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -35,7 +35,6 @@
       <HintPath>..\..\SmartIrc4net\bin\debug\Meebey.SmartIrc4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,15 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\ConfigurationManager.cs" />
-    <Compile Include="Core.cs" />
-    <Compile Include="Plugin\PluginManager.cs" />
+    <Compile Include="ReplyTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="TriumIrcBot.dll.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TriumIrcBot.Plugin\TriumIrcBot.Plugin.csproj">
