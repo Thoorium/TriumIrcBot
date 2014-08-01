@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using TriumIrcBot.Configuration;
 using TriumIrcBot.Plugin;
 
 namespace TriumIrcBot
@@ -13,6 +14,11 @@ namespace TriumIrcBot
         private const string REALNAME = "TriumIrcBot";
 
         private IrcClient fIrcClient = new IrcClient();
+
+        public Core()
+        {
+            ConfigurationManager.Load(this);
+        }
 
         public void Join(string aChannel)
         {
