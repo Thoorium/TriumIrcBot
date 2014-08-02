@@ -32,6 +32,7 @@ namespace TriumIrcBot.Configuration
             catch (Exception _Ex)
             {
                 //TODO: Handle error
+                throw;
             }
         }
     }

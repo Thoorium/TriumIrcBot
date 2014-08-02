@@ -10,13 +10,14 @@ using TriumIrcBot.Plugin;
 
 namespace TriumIrcBot
 {
-    public class Core
+    public class IrcBot
     {
         private const string REALNAME = "TriumIrcBot";
 
         private IrcClient fIrcClient = new IrcClient();
+        private PluginManager fPluginManager = new PluginManager();
 
-        public Core()
+        public IrcBot()
         {
             ConfigurationManager.Load(this);
         }
@@ -53,10 +54,10 @@ namespace TriumIrcBot
 
             if (!string.IsNullOrWhiteSpace(_PluginDirectory))
             {
-                PluginManager.LoadPluginFiles(Directory.EnumerateFiles(_PluginDirectory, "*.dll"));
+                fPluginManager.LoadPluginFiles(Directory.EnumerateFiles(_PluginDirectory, "*.dll"));
             }
             //Maybe move into the if above?
-            PluginManager.RegisterIrcClient(fIrcClient);
+            fPluginManager.RegisterIrcClient(fIrcClient);
         }
 
         /// <summary>
