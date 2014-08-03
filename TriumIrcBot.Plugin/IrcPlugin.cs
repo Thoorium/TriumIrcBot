@@ -8,7 +8,7 @@ namespace TriumIrcBot.Plugin
 {
     public abstract class IrcPlugin
     {
-        //TODO: the rest
+        public abstract void Initialize(IrcClient aIrcClient);
 
         public abstract void OnAutoConnectError(AutoConnectErrorEventArgs e);
 
@@ -123,5 +123,7 @@ namespace TriumIrcBot.Plugin
         public abstract void OnVoice(VoiceEventArgs e);
 
         public abstract void OnWho(WhoEventArgs e);
+
+        public abstract void Terminate(IrcClient aIrcClient);
     }
 }

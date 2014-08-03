@@ -5,6 +5,10 @@ namespace PluginSamples
 {
     public class ReplyTest : IrcPlugin
     {
+        public override void Initialize(IrcClient aIrcClient)
+        {
+        }
+
         public override void OnAutoConnectError(AutoConnectErrorEventArgs e)
         {
         }
@@ -231,6 +235,10 @@ namespace PluginSamples
         }
 
         public override void OnWho(WhoEventArgs e)
+        {
+        }
+
+        public override void Terminate(IrcClient aIrcClient)
         {
         }
     }

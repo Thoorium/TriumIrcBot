@@ -60,6 +60,12 @@ namespace TriumIrcBot
             fPluginManager.RegisterIrcClient(fIrcClient);
         }
 
+        public void Stop()
+        {
+            fPluginManager.UnRegisterIrcClient(fIrcClient);
+            fIrcClient.Disconnect();
+        }
+
         /// <summary>
         /// Listen to all incoming irc communications
         /// </summary>

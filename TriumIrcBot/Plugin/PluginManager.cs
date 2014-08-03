@@ -20,12 +20,15 @@ namespace TriumIrcBot.Plugin
                 foreach (var _Plugin in LoadPluginFile(_PluginFileName))
                 {
                     fPluginList.Add(_Plugin.Key, _Plugin.Value);
+                    Console.WriteLine("Loaded {0}:{1}", _Plugin.Key, _Plugin.Value);
                 }
             }
         }
 
         public void RegisterIrcClient(IrcClient aIrcClient)
         {
+            fPluginList.Keys.ToList().ForEach(a => a.Initialize(aIrcClient));
+
             #region IrcClientEvents
 
             aIrcClient.OnAutoConnectError += (object sender, AutoConnectErrorEventArgs e) => { fPluginList.Keys.ToList().ForEach(a => a.OnAutoConnectError(e)); };
@@ -143,6 +146,11 @@ namespace TriumIrcBot.Plugin
             aIrcClient.OnWho += (object sender, WhoEventArgs e) => { fPluginList.Keys.ToList().ForEach(a => a.OnWho(e)); };
 
             #endregion IrcClientEvents
+        }
+
+        public void UnRegisterIrcClient(IrcClient aIrcClient)
+        {
+            fPluginList.Keys.ToList().ForEach(a => a.Terminate(aIrcClient));
         }
 
         private void LoadPluginClass(string aFileName, Dictionary<IrcPlugin, string> aServerPluginList, Type aType, Assembly aAssembly)
