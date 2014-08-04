@@ -13,6 +13,11 @@ namespace TriumIrcBot.Plugin
         private readonly Dictionary<IrcPlugin, string> fPluginList = new Dictionary<IrcPlugin, string>();
         private AppDomain fPluginAppDomain;//TODO: Load plugins into a different appdomain
 
+        public void AfterConnectionComplete(IrcClient aIrcClient)
+        {
+            fPluginList.Keys.ToList().ForEach(a => a.AfterConnectionComplete(aIrcClient));
+        }
+
         public void LoadPluginFiles(IEnumerable<string> aPluginFiles)
         {
             foreach (string _PluginFileName in aPluginFiles)
@@ -20,7 +25,7 @@ namespace TriumIrcBot.Plugin
                 foreach (var _Plugin in LoadPluginFile(_PluginFileName))
                 {
                     fPluginList.Add(_Plugin.Key, _Plugin.Value);
-                    Console.WriteLine("Loaded {0}:{1}", _Plugin.Key, _Plugin.Value);
+                    Console.WriteLine("Loaded {0}:{1}", _Plugin.Key, Path.GetFileName(_Plugin.Value));
                 }
             }
         }

@@ -5,6 +5,10 @@ namespace PluginSamples
 {
     public class ReplyTest : IrcPlugin
     {
+        public override void AfterConnectionComplete(IrcClient aIrcClient)
+        {
+        }
+
         public override void Initialize(IrcClient aIrcClient)
         {
         }

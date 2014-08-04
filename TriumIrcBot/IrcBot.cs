@@ -58,6 +58,9 @@ namespace TriumIrcBot
             }
             //Maybe move into the if above?
             fPluginManager.RegisterIrcClient(fIrcClient);
+
+            Thread.Sleep(1000 * 15);//Wait for the client to register and stuff, do something better eventually
+            fPluginManager.AfterConnectionComplete(fIrcClient);
         }
 
         public void Stop()
