@@ -48,6 +48,7 @@
     <Compile Include="IrcBot.cs" />
     <Compile Include="Plugin\PluginManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tool\ConsolePlus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="TriumIrcBot.dll.config">
